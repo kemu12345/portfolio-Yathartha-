@@ -9,7 +9,19 @@ h2 { margin: 2rem 0 1rem; text-align: center; }
 body.dark-mode { background: #121212; color: #e0e0e0; }
 body.dark-mode header, body.dark-mode footer { background: #1f1f1f; }
 body.dark-mode .project-card, body.dark-mode .skill { background: #222; }
-
+.hero-image 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-image img 
+{
+    max-width: 200px;
+    border-radius: 10%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin: 30px auto;
+}   
 /* Theme Toggle */
 .theme-toggle {
     position: fixed; top: 20px; right: 20px; z-index: 1000;

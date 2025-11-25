@@ -38,9 +38,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
     msg.style.color = 'green';
     msg.textContent = 'Thank you! Redirecting...';
-    setTimeout(() => {
+    
         window.location.href = 'details.html';
-    }, 1000);
+    
 });
 
 // Step 3: Open projects without <a> tags
@@ -73,7 +73,7 @@ function showSlide(n) {
 }
 next.addEventListener('click', () => showSlide(currentSlide + 1));
 prev.addEventListener('click', () => showSlide(currentSlide - 1));
-setInterval(() => showSlide(currentSlide + 1), 5000); // Auto-slide
+ 
 
 // Step 6: Dark/Light Mode Toggle
 const toggle = document.getElementById('theme-switch');
@@ -84,7 +84,7 @@ toggle.addEventListener('change', () => {
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {                    // show after scrolling 400px
+    if (window.scrollY > 400) {                    // show after scrolling 400px
         backToTopButton.classList.add('show');
     } else {
         backToTopButton.classList.remove('show');
