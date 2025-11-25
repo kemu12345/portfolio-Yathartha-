@@ -1,78 +1,151 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Yathartha Kafle - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch">🌙 Dark Mode</label>
+    </div>
+
+    
+   
+
     <!-- Header -->
     <header>
-        <h1>Your Name</h1>
+        <h1>Yathartha Kafle</h1>
         <nav>
             <a href="#about">About</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#media">Media</a>
+            <a href="#slider">Gallery</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h2>Hi, I'm Yathartha Kafle </h2>
+        <h2>Hi, I'm Yathartha Kafle</h2>
         <p>“I’m a student and beginner web developer who loves creating clean, simple websites using HTML, CSS, and JavaScript.”</p>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>
-            I am a tech learner passionate about building websites and exploring programming. I enjoy working with HTML, CSS, JavaScript, Python, and C#. I love creating small projects, learning new concepts, and improving my skills every day.
-        </p>
+        <p>I am a tech learner passionate about building websites and exploring programming. I enjoy working with HTML, CSS, JavaScript, Python, and C#. I love creating small projects, learning new concepts, and improving my skills every day.</p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="project-card" class="project">
+    <!-- Step 1: Skills Section with Animated Progress Bars -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar"><div class="skill-progress" data-percent="90"></div></div>
+            <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar"><div class="skill-progress" data-percent="85"></div></div>
+            <span class="skill-percent">85%</span>
+        </div>
+        <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="skill-bar"><div class="skill-progress" data-percent="70"></div></div>
+            <span class="skill-percent">70%</span>
+        </div>
+        <div class="skill">
+            <div class="skill-name">Python</div>
+            <div class="skill-bar"><div class="skill-progress" data-percent="75"></div></div>
+            <span class="skill-percent">75%</span>
+        </div>
+    </section>
+
+    <!-- Step 3: Projects Section (clickable cards - no <a> tags) -->
+    <section id="projects" class="projects">
         <h2>Projects</h2>
-
-        <div class="project-card">
-            
-            <h3>Project 1</h3>
-            
-            <p>Your online printer shop is a digital platform where customers can browse, choose, and purchase printers and printer-related accessories online. The goal is to make buying printers easy, convenient, and accessible from anywhere.</p>
-            <img src="img.png" alt="Project 2">
+        <div class="project-grid">
+            <div class="project-card" data-url="https://your-printer-shop.netlify.app">
+                <img src="img.png" alt="Printer Shop">
+                <h3>Online Printer Shop</h3>
+                <p>An e-commerce platform for buying printers and accessories.</p>
+            </div>
+            <div class="project-card" data-url="https://your-weather-app.netlify.app">
+                <img src="imgg.png" alt="Weather App">
+                <h3>Weather App</h3>
+                <p>Real-time weather updates for any location.</p>
+            </div>
         </div>
-
-        <div class="project-card">
-            
-            <h3>Project 2</h3>
-            <p>Your weather app is a mobile or web application that provides real-time weather updates. It helps users check current conditions, forecasts, and weather alerts for any location, making it easier to plan daily activities..</p>
-            <img src="imgg.png" alt="Project 2">
-        </div>
-
     </section>
 
-    <!-- Contact Section -->
-<section id="contact" class="contact">
-    <h2>Contact Me</h2>
+    <!-- Step 4: HTML5 Media + Canvas -->
+    <section id="media" class="media">
+        <h2>HTML5 Media & Canvas</h2>
+        <div class="media-container">
+            <video controls width="400">
+                <source src="Cr7.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <audio controls>
+                <source src="short.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <canvas id="myCanvas" width="300" height="200"></canvas>
+        </div>
+    </section>
 
-    <form action="#" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    <!-- Step 5: Image Slider -->
+    <section id="slider" class="slider-section">
+        <h2>Image Gallery</h2>
+        <div class="slider">
+            <img src="dog.jpeg" alt="Slide 1" class="slide active">
+            <img src="nepal.jpeg" alt="Slide 2" class="slide">
+            <img src="ronaldo.webp" alt="Slide 3" class="slide">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </section>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <!-- Contact Form (Step 2) -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+            <p id="form-message"></p>
+        </form>
+    </section>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
+    <body>
+    <!-- Back-to-Top Button – MUST be here (very top of body) -->
+    <button id="back-to-top" title="Back to Top">Top</button>
 
-        <button type="submit">Send</button>
-    </form>
-</section>
+    <!-- Theme Toggle (you already have this) -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch">Dark Mode</label>
+    </div>
 
-    <!-- Footer -->
+    <!-- rest of your page … -->
+
     <footer>
-        <p>© 2025 Your Name. All rights reserved.</p>
+        <p>© 2025 Yathartha Kafle. All rights reserved.</p>
     </footer>
-    </body>
+
+    <script src="script.js"></script>
+</body>
 </html>

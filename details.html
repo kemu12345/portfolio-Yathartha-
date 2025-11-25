@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Received - Thank You!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding: 50px; text-align: center; font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: #6200ea; }
+        .data { background: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left; }
+        .back-btn { display: inline-block; margin-top: 30px; padding: 12px 30px; background: #6200ea; color: white; text-decoration: none; border-radius: 50px; }
+        .back-btn:hover { background: #4500a0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Thank You!</h1>
+    <p>Your message has been received. Here are the details:</p>
+
+    <div class="data" id="displayData">
+        <!-- Data will be inserted here by JavaScript -->
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Portfolio</a>
+</div>
+
+<script>
+// This runs when form-details.html loads
+const savedData = JSON.parse(localStorage.getItem('contactForm'));
+
+if (savedData) {
+    document.getElementById('displayData').innerHTML = `
+        <p><strong>Name:</strong> ${savedData.name}</p>
+        <p><strong>Email:</strong> ${savedData.email}</p>
+        <p><strong>Message:</strong><br>${savedData.message.replace(/\n/g, '<br>')}</p>
+    `;
+} else {
+    document.getElementById('displayData').innerHTML = "<p style='color:red;'>No message found. Please go back and submit the form.</p>";
+}
+</script>
+
+</body>
+</html>
